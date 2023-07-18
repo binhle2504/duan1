@@ -1,0 +1,145 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="./css/home.css" />
+    <title>Admin</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <ul>
+                <li>
+                    <a href=""><i class="fa-solid fa-house"></i> Trang chủ</a>
+                </li>
+                <li>
+                    <a href=""><i class="fa-solid fa-list"></i> Danh mục</a>
+                </li>
+                <li>
+                    <a href=""><i class="fa-solid fa-shirt"></i> Sản phẩm</a>
+                </li>
+                <li>
+                    <a href=""><i class="fa-solid fa-user"></i> Tài khoản</a>
+                </li>
+                <li>
+                    <a href=""><i class="fa-solid fa-comments"></i> Bình luận</a>
+                </li>
+                <li>
+                    <a href=""><i class="fa-solid fa-chart-pie"></i> Thống kê</a>
+                </li>
+                <li>
+                    <a href=""><i class="fa-solid fa-truck-fast"></i> Đơn hàng</a>
+                </li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="header">
+                <h1>Sản Phẩm </h1>
+                <div class="logo">
+                    <img src="https://www.sporter.vn/wp-content/uploads/2017/05/logo.png" alt="" />
+                </div>
+            </div>
+            <div class="main-content">
+                <p class="p-3 text-[28px] border bg-[#EEE] rounded-md">
+                    THÊM MỚI SẢN PHẨM
+                </p>
+                <div class="form mt-5 leading-8">
+                    <form action="index_admin.php?act=addsp" method="post" enctype="multipart/form-data">
+                        <!-- đẩy file ảnh lên  -->
+
+                        <p>Mã Sản Phẩm</p>
+                        <input class="border w-full rounded-[4px] h-[40px] px-3 border-[#FFC0CB]" type="text" disabled
+                            name="ma_loai" placeholder="Auto number">
+                        <p>Tên Sản Phẩm</p>
+                        <input class="border w-full rounded-[4px] h-[40px] px-3 border-[#FFC0CB]" type="text"
+                            name="tensp" required placeholder="vui long nhap ten san pham">
+
+                        <p>Giá Sản Phẩm</p>
+                        <input class="border w-full rounded-[4px] h-[40px] px-3 border-[#FFC0CB]" type="text"
+                            name="giasp" required placeholder="vui long nhap gia san pham">
+                        <p>Ảnh Sản Phẩm</p>
+                        <input class="border w-full rounded-[4px] h-[40px] px-3 border-[#FFC0CB]" type="file"
+                            name="hinh" required>
+                        <p>Mô Tả Sản Phẩm</p>
+                        <textarea name="mota" id="" cols="30" rows="10"
+                            class="border w-full rounded-[4px] h-[70px] px-3 border-[#FFC0CB]"
+                            placeholder="mo ta san pham...."></textarea>
+
+                        <p>Danh Mục </p>
+                        <select name="iddm" class="w-full px-3 border rounded-[4px] h-[40px]">
+                            <option value="">--Chọn--</option>
+
+                            echo '<option value="'.$id.'">'.$name.'</option>';
+                            }
+                            ?>
+                        </select>
+
+
+                        <div class="mt-[20px]">
+                            <input type="submit" value="Thêm Mới" name="themmoi"
+                                class="border ml-[5px] px-3 py-[10.5px] rounded-[4px] bg-[#FFC0CB] hover:font-[500]">
+                            <input class="border ml-[5px] px-3 py-[10.5px] rounded-[4px] bg-[#FFC0CB] hover:font-[500]"
+                                type="reset" value="Nhập Lại">
+                            <a href="index_admin.php?act=listsp"><input type="button" value="Danh Sách"
+                                    class=" border px-3 py-[10.5px] rounded-[4px] bg-[#FFC0CB] hover:font-[500]"></a>
+                        </div>
+
+                        <?php
+        if (isset($thongbao) && ($thongbao))
+            echo $thongbao;
+        ?>
+                    </form>
+                </div>
+            </div> <!-- End .main-->
+        </div> <!-- End .container-->
+    </div>
+    </div>
+    </div>
+</body>
+<!-- <table class="border w-full mx-auto text-center">
+  <tr class="bg-[#FFC0CB] py-2 border text-center text-red-600 h-[50px]">
+    <td class="border w-[55px] "></td>
+    <td class="w-[140px]">Mã Sản Phẩm</td>
+    <td class="border ">Tên Sản Phẩm</td>
+    <td class="w-[140px]">Ảnh Sản Phẩm</td>
+    <td class="w-[140px]">Giá Sản Phẩm</td>
+    <td class="w-[140px]">Lượt Xem</td>
+    <td class="w-[140px]">Mô Tả</td>
+    <td class="border w-[120px]">Thao Tác</td>
+  </tr>
+
+
+  <tr>
+    <td class="border h-[50px]"><input type="checkbox" name="" id=""></td>
+    <td class="border h-[50px]">
+
+    </td>
+    <td class="border h-[50px]">
+
+    </td>
+    <td class="border h-[50px]">
+
+    </td>
+    <td class="border h-[50px]">
+
+    </td>
+    <td class="border h-[50px]">
+
+    </td>
+    <td class="border h-[50px]">
+
+    </td>
+    <td class="border h-[50px]">
+      <a href=""><input type="button" value="Sửa" class="border w-[50px] hover:bg-[#FFC0CB]"></a>
+      <a onclick="return confirm('Bạn có chắc chắn muốn xóa?')" href=""><input type="button" value="Xóa"
+          class="border w-[40px] hover:bg-[#FFC0CB]"></a>
+    </td>
+  </tr>
+
+</table> -->
+
+</html> 
